@@ -70,7 +70,6 @@ theta_slider = Slider(
 )
 
 
-
 # The function to be called anytime a slider's value changes
 def update(val):
     line.set_ydata(f(x, a_slider.val, b_slider.val, c_slider.val, theta_slider.val))
@@ -83,68 +82,6 @@ b_slider.on_changed(update)
 c_slider.on_changed(update)
 
 theta_slider.on_changed(update)
-
-
-# Create a `matplotlib.widgets.Button` to reset the sliders to initial values.
-resetax = plt.axes([0.9, 0.025, 0.09, 0.04])
-zerobutton = Button(resetax, 'Reset', hovercolor='0.975')
-def reset(event):
-    a_slider.valinit=init_a ; a_slider.reset()
-    b_slider.valinit=init_b ; b_slider.reset()
-    c_slider.valinit=init_c ; c_slider.reset()
-
-    theta_slider.valinit=init_theta ; theta_slider.reset()
-zerobutton.on_clicked(reset)
-
-pos1ax = plt.axes([0.4, 0.025, 0.09, 0.04])
-pos1button = Button(pos1ax, 'pos1', hovercolor='0.975')
-def pos1(event):
-    a_slider.valinit=0.237 ; a_slider.reset()
-    b_slider.valinit=0.090 ; b_slider.reset()
-    c_slider.valinit=0.741 ; c_slider.reset()
-
-    theta_slider.valinit=18.01 ; theta_slider.reset()
-pos1button.on_clicked(pos1)
-
-pos2ax = plt.axes([0.5, 0.025, 0.09, 0.04])
-pos2button = Button(pos2ax, 'pos2', hovercolor='0.975')
-def pos2(event):
-    a_slider.valinit=0.434 ; a_slider.reset()
-    b_slider.valinit=0.180 ; b_slider.reset()
-    c_slider.valinit=0.519 ; c_slider.reset()
-
-    theta_slider.valinit=-3.43 ; theta_slider.reset()
-pos2button.on_clicked(pos2)
-
-pos3ax = plt.axes([0.6, 0.025, 0.09, 0.04])
-pos3button = Button(pos3ax, 'pos3', hovercolor='0.975')
-def pos3(event):
-    a_slider.valinit=0.230 ; a_slider.reset()
-    b_slider.valinit=0.089 ; b_slider.reset()
-    c_slider.valinit=0.792 ; c_slider.reset()
-
-    theta_slider.valinit=19.37 ; theta_slider.reset()
-pos3button.on_clicked(pos3)
-
-pos4ax = plt.axes([0.7, 0.025, 0.09, 0.04])
-pos4button = Button(pos4ax, 'pos4', hovercolor='0.975')
-def pos4(event):
-    a_slider.valinit=0.259 ; a_slider.reset()
-    b_slider.valinit=0.575 ; b_slider.reset()
-    c_slider.valinit=0.113 ; c_slider.reset()
-
-    theta_slider.valinit=24.17 ; theta_slider.reset()
-pos4button.on_clicked(pos4)
-
-pos5ax = plt.axes([0.8, 0.025, 0.09, 0.04])
-pos5button = Button(pos5ax, 'pos5', hovercolor='0.975')
-def pos5(event):
-    a_slider.valinit=0.034 ; a_slider.reset()
-    b_slider.valinit=0.294 ; b_slider.reset()
-    c_slider.valinit=0.613 ; c_slider.reset()
-
-    theta_slider.valinit=-9.38 ; theta_slider.reset()
-pos5button.on_clicked(pos5)
 
 
 plt.show()
