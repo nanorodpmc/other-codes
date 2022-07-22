@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Import data from csv
-data = pd.read_csv('C:/Users/morel/OneDrive/Bureau/data/20220222/nem monazite EG/10x NA 0.3/images/Spectrum/image_Pos0_Polarizer0_X-Axis0000_Y-Axis0000.csv', sep=',')
+data = pd.read_csv('data monazite/10x NA 0.3/image_Pos0_Polarizer0_X-Axis0000_Y-Axis0000.csv', sep=',')
 
 wav = [float(a) for a in list(data)[1:-1]]
 val = list(list(data.values[:][0])[1:-1])
@@ -30,8 +30,7 @@ maxes = [0]*5
 print('finding min/max to normalize')
 for i in range(0, 37):
     for j in objectives:
-        data = pd.read_csv('C:/Users/morel/OneDrive/Bureau/data/20220222/nem monazite EG/'+j +
-                           '/images/Spectrum/image_Pos0_Polarizer'+str(i)+'_X-Axis0000_Y-Axis0000.csv', sep=',')  # Import data from csv
+        data = pd.read_csv('data monazite/'+j +'/image_Pos0_Polarizer'+str(i)+'_X-Axis0000_Y-Axis0000.csv', sep=',')  # Import data from csv
         val = list(data.values[:][0])[1:-1]
         mines[objectives.index(j)] = min(mines[objectives.index(j)], min(val))
         maxes[objectives.index(j)] = max(maxes[objectives.index(j)], max(val))
@@ -41,8 +40,7 @@ print(maxes)
 print('reading files')
 for i in range(0, 37):
     for j in objectives:
-        data = pd.read_csv('C:/Users/morel/OneDrive/Bureau/data/20220222/nem monazite EG/'+j +
-                           '/images/Spectrum/image_Pos0_Polarizer'+str(i)+'_X-Axis0000_Y-Axis0000.csv', sep=',')  # Import data from csv
+        data = pd.read_csv('data monazite/'+j +'/image_Pos0_Polarizer'+str(i)+'_X-Axis0000_Y-Axis0000.csv', sep=',')  # Import data from csv
         wav = [float(a) for a in list(data)[1:-1]]
         val = list(data.values[:][0])[1:-1]
         wav.reverse()
